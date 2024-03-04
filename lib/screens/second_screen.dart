@@ -18,14 +18,14 @@ class _SecondScreenState extends State<SecondScreen> {
         itemCount: items.length,
         itemBuilder: (context,index){
           return Card(
+            color: Colors.pinkAccent,
             child: Center(
                 child: Text
                   (
-                    items[index].toString(),style: TextStyle(
+                    items[index].toString(),style: const TextStyle(
                     fontSize: 20
                 )
                 )),
-            color: Colors.pinkAccent,
           );
         },
       ),
@@ -36,7 +36,7 @@ class _SecondScreenState extends State<SecondScreen> {
             items.add(items.length+1);
           });
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
 
     );

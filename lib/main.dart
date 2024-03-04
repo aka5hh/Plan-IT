@@ -1,25 +1,34 @@
+//import 'package:plan_it/screens/home.dart';
 import 'package:flutter/material.dart';
-import 'package:plan_it/screens/home.dart';
+import 'package:plan_it/pages/home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return MaterialApp(
-      title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const Home(),
+      home: HomePage(),
+      theme: ThemeData(primarySwatch: Colors.yellow),
     );
   }
 }
+
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Plan IT',
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData(
+//         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+//         useMaterial3: true,
+//       ),
+//       home: const Home(),
+//     );
+//   }
+// }
 
