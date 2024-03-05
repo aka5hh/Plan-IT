@@ -1,27 +1,69 @@
-import 'package:flutter/cupertino.dart';
+import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
+
 class ToDoTile extends StatelessWidget {
-  const ToDoTile({super.key});
+  final String taskTitle;
+  final String taskName;
+  final bool taskCompleted;
+  final Function(bool?)? onChanged;
+
+  const ToDoTile({
+    Key? key,
+    required this.taskTitle,
+    required this.taskName,
+    required this.onChanged,
+    required this.taskCompleted,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final now = DateTime.now();
+    final dateFormat = DateFormat.yMMMMd(); // Optimized date format
+    final timeFormat = DateFormat.jm(); // Optimized time format
+
     return Padding(
       padding: const EdgeInsets.all(25.0),
       child: Container(
-        padding: EdgeInsets.all(24),
-        child: Row(
-          children: [
-
-          //checkbox
-          Checkbox(value: value, onChanged: onChanged)
-
-          // task name
-            Text("Make Tutorial"),
-            ],
-        ),
+        padding: const EdgeInsets.all(24), // Use const for padding
         decoration: BoxDecoration(
           color: Colors.lightBlue.shade100,
           borderRadius: BorderRadius.circular(12),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              taskTitle,
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 8), // Use const for SizedBox
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Flexible(
+                  child: Text(
+                    taskName,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                Checkbox(
+                  value: taskCompleted,
+                  onChanged: onChanged,
+                ),
+              ],
+            ),
+            const SizedBox(height: 8), // Use const for SizedBox
+            Align(
+              alignment: Alignment.centerRight,
+              child: Text(
+                '${timeFormat.format(now)}, ${dateFormat.format(now)}',
+              ),
+            ),
+          ],
         ),
       ),
     );

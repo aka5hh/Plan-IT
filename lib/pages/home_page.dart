@@ -14,12 +14,29 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
-        title: Center(child: Text('Plan IT')),
+        title: Center(child: Text('Task Board')),
         elevation: 0,
       ),
       body: ListView(
         children: [
-          ToDoTile(),
+          ToDoTile(
+            taskTitle:"Task 1",
+            taskName: "Your Personal task management and planning solution for planning your day, week & months",
+            taskCompleted: true,
+            onChanged: (p0) {},
+          ),
+          ToDoTile(
+            taskTitle:"Task 2",
+            taskName: "Your Personal task management and planning solution for planning your day, week & months",
+            taskCompleted: true,
+            onChanged: (p0) {},
+          ),
+          ToDoTile(
+            taskTitle:"Task 3",
+            taskName: "Your Personal task management and planning solution for planning your day, week & months",
+            taskCompleted: true,
+            onChanged: (p0) {},
+          ),
         ],
       ),
     );
