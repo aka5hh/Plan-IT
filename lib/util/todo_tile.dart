@@ -18,13 +18,13 @@ class ToDoTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final now = DateTime.now();
-    final dateFormat = DateFormat.yMMMMd(); // Optimized date format
-    final timeFormat = DateFormat.jm(); // Optimized time format
+    final dateFormat = DateFormat.yMMMMd(); // date format
+    final timeFormat = DateFormat.jm(); // time format
 
     return Padding(
       padding: const EdgeInsets.all(25.0),
       child: Container(
-        padding: const EdgeInsets.all(24), // Use const for padding
+        padding: const EdgeInsets.all(24), // padding
         decoration: BoxDecoration(
           color: Colors.lightBlue.shade100,
           borderRadius: BorderRadius.circular(12),
@@ -39,7 +39,7 @@ class ToDoTile extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 8), // Use const for SizedBox
+            const SizedBox(height: 8), // SizedBox
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -56,7 +56,7 @@ class ToDoTile extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 8), // Use const for SizedBox
+            const SizedBox(height: 8), // SizedBox
             Align(
               alignment: Alignment.centerRight,
               child: Text(
